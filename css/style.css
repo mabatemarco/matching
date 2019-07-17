@@ -1,0 +1,21 @@
+body{
+	text-align:center;
+}
+
+img{
+	height: 120px;
+	width: auto;
+	margin:2em;
+	transform:rotate(90deg);
+	background-image:url("images/card.png");
+}
+
+.row{
+	display: flex;
+	justify-content: center;
+	margin: 2em;
+}
+
+#win{
+	font-size:5em;
+}
