@@ -3,17 +3,21 @@ body{
 }
 
 img{
-	height: 120px;
-	width: auto;
-	margin:2em;
+	height:100%;
+	width:auto;
 	transform:rotate(90deg);
-	background-image:url("images/card.png");
+}
+
+.container{
+	height:150px;
+	width:180px;
+	margin:0 2em;
 }
 
 .row{
 	display: flex;
 	justify-content: center;
-	margin: 2em;
+	margin: 5em 0 0 0;
 }
 
 #win{
