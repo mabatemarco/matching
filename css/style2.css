@@ -1,0 +1,23 @@
+body{
+	text-align:center;
+}
+
+img{
+	height:100%;
+	width:auto;
+	transform:rotate(90deg);
+}
+
+td{
+	height:150px;
+	width:180px;
+	padding: 2.5em .5em;
+}
+
+table{
+	margin: 2em auto;
+}
+
+#win{
+	font-size:5em;
+}

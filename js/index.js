@@ -1,6 +1,5 @@
 var selecteda;
 var selectedb;
-var selectedsrc;
 var n=6;
 var cardturned=false
 
@@ -18,12 +17,11 @@ $('img').click(match);
 function match(){
 	$('img').css('pointer-events', 'none');
 	if(cardturned==true){
-		var srcb='src'+$(this).attr('id');
-		srcb=eval(srcb);
+		var srcb=eval('src'+$(this).attr('id'));
 		$(this).attr('src',srcb);
 		selectedb=$(this);
 		cardturned=false
-		if($(this).attr('src')==selectedsrc){
+		if($(this).attr('src')==$(selecteda).attr('src')){
 			setTimeout(pairget,1200)
 		}
 		else{
@@ -31,10 +29,8 @@ function match(){
 		};
 	}
 	else{
-		var srca='src'+$(this).attr('id');
-		srca=eval(srca);
+		var srca=eval('src'+$(this).attr('id'));
 		$(this).attr('src',srca);
-		selectedsrc=$(this).attr('src');
 		selecteda=(this);
 		cardturned=true;
 		$('img').css('pointer-events', 'auto');
