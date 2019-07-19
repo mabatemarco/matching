@@ -20,6 +20,14 @@ img{
 	margin: 5em 0 0 0;
 }
 
-#win{
-	font-size:5em;
+h2{
+	font-size:4em;
+	margin:2em;
 }
+
+button{
+	margin:1em;
+	color:red;
+	font-size:2em;
+}
+
