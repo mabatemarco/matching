@@ -9,6 +9,10 @@ var n=6;
 var cardturned=false;
 var pics=['images/koda1.jpg','images/koda1.jpg','images/koda2.jpg','images/koda2.jpg','images/koda3.jpg','images/koda3.jpg','images/koda4.jpg','images/koda4.jpg','images/koda5.jpg','images/koda5.jpg','images/koda6.jpg','images/koda6.jpg',];
 var used=[];
+var middle;
+var positions=[];
+var left;
+var top
 
 for(i=0;used.length<12;){
 	var x=Math.ceil(Math.random() * 12);
@@ -19,6 +23,52 @@ for(i=0;used.length<12;){
 	}
 	else{}
 }
+
+$('img').each(function(index){
+	positions[index]=$(this).offset()
+})
+
+middle=$('.middle').offset()
+
+$('img').each(function(index){
+	left=middle.left-positions[index].left-75
+	top=middle.top-positions[index].top
+	$(this).animate({
+		left: left,
+		top: top
+	},600)
+})
+
+for(i=0;i<5;++i){
+	$('img').each(function(index){
+		if(index<6){
+			$(this).animate({
+				left:'-=150',
+			},150).animate({
+				left:'+=150'
+			},150)
+		}
+		else{
+			$(this).animate({
+				left:'+=150',
+			},150).animate({
+				left:'-=150'
+			},150)
+		}
+	})
+}
+
+var delay=0
+
+$('img').each(function(index){
+	left=middle.left-positions[index].left-75
+	top=middle.top-positions[index].top
+	$(this).delay(delay).animate({
+		left: left*-.2,
+		top: top*-.1
+	},600)
+	delay+=100
+})
 
 var src1=$('#1').attr('src');
 var src2=$('#2').attr('src');
