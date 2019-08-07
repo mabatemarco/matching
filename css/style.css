@@ -3,22 +3,51 @@ body{
 }
 
 img{
-	height:100%;
+	height:200px;
 	width:auto;
-	transform:rotate(90deg);
-	position:relative;
+	position:absolute;
 }
 
 .container{
-	height:150px;
-	width:180px;
-	margin:0 2em;
+	width:900px;
+	height:660px;
+	position:relative;
+	margin: 0 auto;
 }
 
-.row{
-	display: flex;
-	justify-content: center;
-	margin: 5em 0 0 0;
+}
+.row1{
+	top:0px;
+}
+
+.row2{
+	top:220px;
+}
+
+.row3{
+	top:440px;
+}
+
+.column1{
+	position: absolute;
+	background: blue;
+	left:0px;
+}
+
+.column1{
+	left:0;
+}
+
+.column2{
+	left:250px;
+}
+
+.column3{
+	left:500px;
+}
+
+.column4{
+	left:750px;
 }
 
 h2{

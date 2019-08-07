@@ -22,25 +22,22 @@ for(i=0;used.length<12;){
 		++i;
 	}
 	else{}
+		console.log(used)
 }
 
 $('img').each(function(index){
-	positions[index]=$(this).offset()
+	positions[index]=$(this).position()
 })
 
-middle=$('.middle').offset()
-
 $('img').each(function(index){
-	left=middle.left-positions[index].left-75
-	top=middle.top-positions[index].top
 	$(this).animate({
-		left: left,
-		top: top
+		left: 360,
+		top:200
 	},600)
 })
 
 for(i=0;i<5;++i){
-	$('img').each(function(index){
+	$('img').delay(50).each(function(index){
 		if(index<6){
 			$(this).animate({
 				left:'-=150',
@@ -61,14 +58,13 @@ for(i=0;i<5;++i){
 var delay=0
 
 $('img').each(function(index){
-	left=middle.left-positions[index].left-75
-	top=middle.top-positions[index].top
 	$(this).delay(delay).animate({
-		left: left*-.2,
-		top: top*-.1
+		left: positions[index].left,
+		top: positions[index].top
 	},600)
 	delay+=100
 })
+
 
 var src1=$('#1').attr('src');
 var src2=$('#2').attr('src');
@@ -88,10 +84,11 @@ $('img').attr('src','images/card.png')
 $('img').click(match);
 
 function match(){
-if($(this).attr('class')=='clicked'){
+if($(this).hasClass('clicked')){
 	}
 else{
 	if(cardturned==true){
+		$('img').off('click')
 		var srcb=eval('src'+$(this).attr('id'));
 		$(this).attr('src',srcb);
 		selectedb=$(this);
@@ -103,6 +100,7 @@ else{
 		else{
 			setTimeout(reset,1200)
 		};
+
 	}
 	else{
 		var srca=eval('src'+$(this).attr('id'));
@@ -115,6 +113,7 @@ else{
 }
 
 function pairget(){
+	$('img').on('click', match)
 	n-=1;
 	$(selecteda).hide();
 	$(selectedb).hide();
@@ -124,6 +123,7 @@ function pairget(){
 }
 
 function reset(){
+	$('img').on('click', match)
 	$('img').attr('src','images/card.png');
 }
 }
