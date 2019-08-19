@@ -7,22 +7,36 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+	<div class="page">
 	<header>
-		<h1>Handsome Koda's Matching Game</h1>
+		<h1>Koda's Matching Game</h1>
 	</header>
-	<div class="container">
-		<img class="row1 column1" id="1" src="images/card.png">
-		<img class="row1 column2" id="2" src="images/card.png">
-		<img class="row1 column3" id="3" src="images/card.png">
-		<img class="row1 column4" id="4" src="images/card.png">
-		<img class="row2 column1" id="5" src="images/card.png">
-		<img class="row2 column2" id="6" src="images/card.png">
-		<img class="row2 column3" id="7" src="images/card.png">
-		<img class="row2 column4" id="8" src="images/card.png">
-		<img class="row3 column1" id="9" src="images/card.png">
-		<img class="row3 column2" id="10" src="images/card.png">
-		<img class="row3 column3" id="11" src="images/card.png">
-		<img class="row3 column4" id="12" src="images/card.png">
+	<div class="flex">
+		<div class="scores">
+			<div class="stat">
+				<h3>Best Score</h3>
+				<p id="bscore">&ndash;</p>
+			</div>
+			<div class="stat">
+				<h3>Current Score</h3>
+				<p id="cscore">0</p>
+			</div>
+		</div>
+		<div class="container">
+			<img class="row1 column1" id="1" src="images/card.png">
+			<img class="row1 column2" id="2" src="images/card.png">
+			<img class="row1 column3" id="3" src="images/card.png">
+			<img class="row1 column4" id="4" src="images/card.png">
+			<img class="row2 column1" id="5" src="images/card.png">
+			<img class="row2 column2" id="6" src="images/card.png">
+			<img class="row2 column3" id="7" src="images/card.png">
+			<img class="row2 column4" id="8" src="images/card.png">
+			<img class="row3 column1" id="9" src="images/card.png">
+			<img class="row3 column2" id="10" src="images/card.png">
+			<img class="row3 column3" id="11" src="images/card.png">
+			<img class="row3 column4" id="12" src="images/card.png">
+		</div>
+	</div>
 	</div>
 	<audio id="shuffle">
     	<source src="audio/shuffle.mp3" type="audio/mpeg">
