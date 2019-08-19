@@ -3,6 +3,7 @@ function game(){
 	$('h2').remove();
 	$('button').remove();
 	$('img').show();
+
 var selecteda;
 var selectedb;
 var n=6;
@@ -12,7 +13,13 @@ var used=[];
 var middle;
 var positions=[];
 var left;
-var top
+var top;
+var turns=0;
+var delay=0;
+var srca;
+var srcb;
+
+
 
 for(i=0;used.length<12;){
 	var x=Math.ceil(Math.random() * 12);
@@ -22,8 +29,19 @@ for(i=0;used.length<12;){
 		++i;
 	}
 	else{}
-		console.log(used)
 }
+var src1=$('#1').attr('src');
+var src2=$('#2').attr('src');
+var src3=$('#3').attr('src');
+var src4=$('#4').attr('src');
+var src5=$('#5').attr('src');
+var src6=$('#6').attr('src');
+var src7=$('#7').attr('src');
+var src8=$('#8').attr('src');
+var src9=$('#9').attr('src');
+var src10=$('#10').attr('src');
+var src11=$('#11').attr('src');
+var src12=$('#12').attr('src');
 
 $('img').each(function(index){
 	positions[index]=$(this).position()
@@ -55,8 +73,6 @@ for(i=0;i<5;++i){
 	})
 }
 
-var delay=0
-
 $('img').each(function(index){
 	$(this).delay(delay).animate({
 		left: positions[index].left,
@@ -64,20 +80,6 @@ $('img').each(function(index){
 	},600)
 	delay+=100
 })
-
-
-var src1=$('#1').attr('src');
-var src2=$('#2').attr('src');
-var src3=$('#3').attr('src');
-var src4=$('#4').attr('src');
-var src5=$('#5').attr('src');
-var src6=$('#6').attr('src');
-var src7=$('#7').attr('src');
-var src8=$('#8').attr('src');
-var src9=$('#9').attr('src');
-var src10=$('#10').attr('src');
-var src11=$('#11').attr('src');
-var src12=$('#12').attr('src');
 
 $('img').attr('src','images/card.png')
 
@@ -88,8 +90,9 @@ if($(this).hasClass('clicked')){
 	}
 else{
 	if(cardturned==true){
+		turns+=1
 		$('img').off('click')
-		var srcb=eval('src'+$(this).attr('id'));
+		srcb=eval('src'+$(this).attr('id'));
 		$(this).attr('src',srcb);
 		selectedb=$(this);
 		cardturned=false;
@@ -103,7 +106,7 @@ else{
 
 	}
 	else{
-		var srca=eval('src'+$(this).attr('id'));
+		srca=eval('src'+$(this).attr('id'));
 		$(this).attr('src',srca);
 		selecteda=$(this);
 		cardturned=true;
