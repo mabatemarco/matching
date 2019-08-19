@@ -1,5 +1,10 @@
+html{
+	height:100%;
+}
+
 body{
 	text-align:center;
+	background: linear-gradient(#D8CDCD,#AFAEAE);
 }
 
 img{
@@ -8,44 +13,57 @@ img{
 	position:absolute;
 }
 
-.container{
-	width:900px;
-	height:660px;
-	position:relative;
-	margin: 0 auto;
+header{
+	width:940px;
+	margin: 1em auto;
 }
 
+h1{
+	font-family:helvetica;
+	background:red;
+	margin: 0;
+	padding:0;
 }
+
+.container{
+	width:940px;
+	height:700px;
+	position:relative;
+	margin: 0 auto;
+	background-image: url("../images/felt.jpg");
+	background-size: cover;
+	background-position:center;
+	box-shadow:  3px 3px #655858,-3px 3px #655858,3px -3px #655858,-3px -3px #655858;
+	border:1px solid black;
+	border-radius: 5px;
+}
+
 .row1{
-	top:0px;
+	top:30px;
 }
 
 .row2{
-	top:220px;
+	top:250px;
 }
 
 .row3{
-	top:440px;
+	top:470px;
 }
 
 .column1{
-	left:0px;
-}
-
-.column1{
-	left:0;
+	left:20px;
 }
 
 .column2{
-	left:250px;
+	left:270px;
 }
 
 .column3{
-	left:500px;
+	left:520px;
 }
 
 .column4{
-	left:750px;
+	left:770px;
 }
 
 h2{
