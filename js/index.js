@@ -22,7 +22,6 @@ var src9;
 var src10;
 var src11;
 var src12;
-
 $(document).ready(game)
 function game(){
 $('h2').remove();
@@ -100,11 +99,13 @@ $('img').each(function(index){
 // Cards show back side
 $('img').attr('src','images/card.png');
 // Main game
-$('img').on('click',match);
+$('img').unbind('click').on('click',match);
 function match(){
 if($(this).hasClass('clicked')){
 	}
 else{
+	var currentThisWhenClicked = $(this);
+	console.log();
 	$('#flip')[0].play();
 	if(cardturned==true){
 		cscore+=1
@@ -135,12 +136,13 @@ else{
 }
 // When a pair is found
 function pairget(){
-	$('img').on('click', match)
+	$('img').unbind('click').on('click', match)
 	n-=1;
 	$(selecteda).hide();
 	$(selectedb).hide();
 	if(n==0){
 		$('.container').prepend('<h2>You won!</h2><br/><button type="button">New Game</button>');
+		
 		if (bscore==0){
 			bscore=cscore
 		}
@@ -152,8 +154,9 @@ function pairget(){
 }
 // When a pair is not found
 function reset(){
-	$('img').on('click', match)
+	$('img').unbind('click').on('click', match)
 	$('img').attr('src','images/card.png');
 }
 }
-$(document).on('click','button',game)
+
+$(document).unbind('click').on('click','button',game)
